@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@300;400;500;700&display=swap');
+/* Font Roboto - Google Fontes */
+
+*{
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+:root{
+    --cor0 : #4527A0;
+    --cor1 : #BAA8ED;
+    --cor2 : #d7ccf9;
+    --cor3 : #fdfdfd;
+    --cor4 : #c1c1c1;
+    --cor5 : #000;
+    --cor6 : #fff;
+    --btn : #BAA8ED;
+    --linearbtn : linear-gradient(41.35deg, #4527A0 15.93%, #7B57E4 78.85%);
+    --lienarbg :  linear-gradient(90deg, var(--cor2),var(--cor3));
+
+    --cor7 : #1D1B29;
+}
+body{
+    font-family: 'Roboto', sans-serif; 
+    min-height: 100vh; position: relative;
+    background: var(--lienarbg);
+    color: black;
+    display: flex; align-items: center; justify-content: center;
+}
+button{
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.app{
+    max-width: 400px; width: 100%; height: 520px;
+    border-radius: 25px;
+    background: var(--cor6);
+    display: flex; justify-content: center; flex-direction: column; align-items: center;
+}
+.appDark{
+    background: rgba(255, 255, 255, 0.8);
+}
+.thumb{
+    width: 320px; height: 300px;
+    background: var(--cor4);
+    border-radius: 25px;
+    overflow: hidden;
+
+    -webkit-box-shadow: -7px 56px 61px -29px rgba(0,0,0,0.29);
+    -moz-box-shadow: -7px 56px 61px -29px rgba(0,0,0,0.29);
+    box-shadow: -7px 56px 61px -29px rgba(0,0,0,0.29);
+}
+.thumb img{
+    width: 100%; height: 100%; object-fit: cover;
+}
+.info{
+    width: 85%;
+    padding: 30px 0px;
+    display: flex;flex-direction: column; align-items: center; justify-content: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: left;
+ }
+ .info .song{
+    font-size: 1.5rem; font-weight: 600; text-overflow: ellipsis;padding-left: 10px;
+ }
+ .info .singer{
+    font-size: .9rem; font-weight: 600; text-overflow: ellipsis; color: rgba(0,0,0, .60);
+ }
+ .controls{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+ }
+ .controls button {
+    width: 60px; height: 60px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 30px;
+    background: transparent;
+    position: relative;
+ }
+ .controls .play{
+    font-size: 50px;
+    border-radius: 50%;
+    background: linear-gradient(41.35deg, #4527A0 15.93%, #7B57E4 78.85%);
+    color: var(--cor6);
+ }
+ .controls .play i{
+    position: absolute;
+    top: 53%; left: 53%;
+    transform: translate(-50%,-50%);
+    color: var(--cor6);
+ }
+ .controls button i{
+    color: var(--btn);
+ }
+
+ .controls .shuffle:hover i,
+ .controls .prev:hover i,
+ .controls .next:hover i,
+ .controls .repeat:hover i{
+    color: var(--cor0);
+    transition: 1.2s;
+ }
+.controls .play:hover,
+.controls .play:hover i{
+    background: var(--lienarbg);
+    color: var(--cor0);
+    transition: 2s;
+}
+
+
+/*  ------------------------------------ */
+.modeDark{
+    background: var(--cor7);
+}
+.dark{
+    position: absolute;
+    top: 22px; left: 25px;
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background: var(--linearbtn);
+
+    -webkit-box-shadow: -7px 56px 61px -29px rgba(0,0,0,0.29);
+    -moz-box-shadow: -7px 56px 61px -29px rgba(0,0,0,0.29);
+    box-shadow: -7px 56px 61px -29px rgba(0,0,0,0.29);
+}
+.dark i{
+    color: var(--cor3);
+    font-size: 1.8em;
+}
+.dark:hover::after{
+    content: 'Modo Dark';
+    position: absolute;
+    width: 100px; height: 20px;
+    left: 80px; top: 10px;
+    color: var(--cor0);
+    background:  var(--lienarbg);
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: var(--cor3);
+    padding: 10px 30px;
+    border-radius: 10px;
+    transition: 1.2;
+    animation-name: bgAnimated;
+    animation-duration: 1s;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap
+}
+@keyframes bgAnimated {
+    0%{
+        width: 0%;
+        color: rgba(69, 39, 160,0);
+    }
+    99.8%{
+        color:rgba(69, 39, 160, 0);
+    }
+    100%{
+        width: 100%;
+        color: rgba(69, 39, 160,1);
+    }
+}
