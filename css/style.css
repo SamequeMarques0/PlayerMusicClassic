@@ -133,7 +133,7 @@ button{
     font-size: 1.8em;
 }
 .dark:hover::after{
-    content: 'Modo Dark';
+    content: 'Theme';
     position: absolute;
     width: 100px; height: 20px;
     left: 80px; top: 10px;
@@ -148,7 +148,7 @@ button{
     animation-name: bgAnimated;
     animation-duration: 1s;
     overflow: hidden;
-    display: flex;
+    text-align: center;
     flex-wrap: nowrap;
     white-space: nowrap
 }
